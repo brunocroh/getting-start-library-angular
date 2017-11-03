@@ -1,18 +1,27 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./dist/out-tsc",
+    "outDir": "dist",
     "sourceMap": true,
-    "declaration": false,
+    "declaration": true,
+    "module" : "commonjs",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
+    "notEmit": true,
     "typeRoots": [
       "node_modules/@types"
     ],
+    "types": [
+      "jasmine",
+      "karma",
+      "node",
+      "webpack",
+      "webpack-env"
+      ],
     "lib": [
-      "es2017",
+      "es2015",
       "dom"
     ]
   }

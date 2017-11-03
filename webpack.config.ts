@@ -8,10 +8,16 @@ const cleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   name: 'build',
-  entry: './src/index.ts',
+  entry: {
+    'index': './src/index.ts',
+    'index.min': './src/index.ts'
+  },
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'index.js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js',
+    libraryTarget: 'umd',
+    library: 'AngularComponents',
+    umdNamedDefine: true
   },
   resolve: {
     extensions: [ '.ts', '.js', '.json' ]
