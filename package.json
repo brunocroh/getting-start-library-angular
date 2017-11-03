@@ -1,6 +1,8 @@
 {
   "name": "angular-components",
   "version": "0.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -30,6 +32,7 @@
     "@types/node": "~6.0.60",
     "angular2-template-loader": "^0.6.2",
     "awesome-typescript-loader": "^3.3.0",
+    "clean-webpack-plugin": "^0.1.17",
     "codelyzer": "~3.2.0",
     "css-loader": "^0.28.7",
     "jasmine-core": "~2.6.2",
@@ -51,5 +54,9 @@
     "webpack": "^3.8.1",
     "webpack-angular-externals": "^1.0.2",
     "webpack-rxjs-externals": "^1.1.0"
+  },
+  "dependencies": {
+    "@angular/common": "^5.0.0",
+    "@angular/core": "^5.0.0"
   }
 }

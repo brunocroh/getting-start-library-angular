@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const fs = require('fs');
 const angularExternals = require('webpack-angular-externals');
 const rxjsExternals = require('webpack-rxjs-externals');
+const cleanWebpackPlugin = require('clean-webpack-plugin');
 
 
 module.exports = {
@@ -10,7 +11,7 @@ module.exports = {
   entry: './src/index.ts',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].js'
+    filename: 'index.js'
   },
   resolve: {
     extensions: [ '.ts', '.js', '.json' ]
@@ -63,6 +64,8 @@ module.exports = {
     ]
   },
   plugins: [
+    new cleanWebpackPlugin('dist', {}),
+
     new webpack.ContextReplacementPlugin(
       /angular(\\|\/)core(\\|\/)@angular/,
       path.join(__dirname, 'src')
@@ -71,7 +74,7 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       include: /\.min\.js$/,
       sourceMap: true
-    }),
+    })
   ],
 
 }
